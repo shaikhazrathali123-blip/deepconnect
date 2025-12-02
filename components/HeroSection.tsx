@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ScanFace, Sparkles, Heart } from 'lucide-react';
+import { ScanFace, Sparkles, Heart,Brain } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
   const [isMatchActive, setIsMatchActive] = useState(false);
@@ -69,7 +69,7 @@ export const HeroSection: React.FC = () => {
                 
                 {/* Core Icon */}
                 <div className="w-10 h-10 bg-black rounded-full border border-white/20 flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-                    <Sparkles className="text-white animate-pulse" size={16} />
+                    <Brain className="text-white animate-pulse" size={16} />
                 </div>
              </div>
 
