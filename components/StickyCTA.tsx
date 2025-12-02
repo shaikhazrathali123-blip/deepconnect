@@ -119,8 +119,8 @@ export const StickyCTA: React.FC = () => {
                 if (navigator.share) {
                   try {
                     await navigator.share({
-                      title: "Join this!",
-                      text: "Get early access with this link:",
+                      title: "the future of love is here ",
+                      text: "Let Ai find your perfect match",
                       url: shareUrl,
                     });
                   } catch (err) {
