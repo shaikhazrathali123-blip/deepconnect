@@ -111,30 +111,38 @@ export const StickyCTA: React.FC = () => {
             <p className="text-xs text-gray-400 mt-1">
               Share this link to get earlier access.
             </p>
+<button
+  onClick={async () => {
+    const shareUrl = "https://deepconnect-in.vercel.app/";
+    const imageUrl = "heroimage.JPG"; // make sure this is accessible
 
-            <button
-              onClick={async () => {
-                const shareUrl = "https://yoursharelink.com";
+    if (navigator.canShare && navigator.canShare({ files: [] })) {
+      try {
+        // Fetch the image as a blob
+        const response = await fetch(imageUrl);
+        const blob = await response.blob();
+        const file = new File([blob], "share-image.png", { type: blob.type });
 
-                if (navigator.share) {
-                  try {
-                    await navigator.share({
-                      title: "Join this!",
-                      text: "Get early access with this link:",
-                      url: shareUrl,
-                    });
-                  } catch (err) {
-                    console.log("cancelled");
-                  }
-                } else {
-                  navigator.clipboard.writeText(shareUrl);
-                  alert("Link copied!");
-                }
-              }}
-              className="mt-3 bg-white text-black font-bold px-4 py-2 rounded-lg text-sm w-full"
-            >
-              Share Link
-            </button>
+        await navigator.share({
+          title: "Join this!",
+          text: "Get early access with this link:",
+          url: shareUrl,
+          files: [file], // include the image here
+        });
+      } catch (err) {
+        console.error("Sharing failed:", err);
+      }
+    } else {
+      // fallback for browsers that don't support sharing files
+      navigator.clipboard.writeText(shareUrl);
+      alert("Link copied!");
+    }
+  }}
+  className="mt-3 bg-white text-black font-bold px-4 py-2 rounded-lg text-sm w-full"
+>
+  Share Link
+</button>
+
 
             <p className="text-[10px] text-gray-400 mt-1">
               Works on WhatsApp, Instagram, Messages & more
