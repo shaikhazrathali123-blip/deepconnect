@@ -153,11 +153,21 @@ export const HeroSection: React.FC = () => {
         <h1 className="text-4xl font-display font-bold text-white mb-3">
           Stop Swiping.
           <br/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-blue">Start Connecting.</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-blue">AI helps find true love.</span>
         </h1>
         <p className="text-gray-400 text-sm mb-8 leading-relaxed">
             Your personal AI agent learns about you and negotiates matches for you, filtering 99% of the noise.
         </p>
+ <div className="relative w-full max-w-4xl z-10 mb-8">
+        <motion.img 
+          src="heroimage.JPG"
+          alt="AI Dating Concept"
+          className="w-full h-auto rounded-2xl shadow-2xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        />
+      </div>
       </div>
     </section>
   );
