@@ -107,9 +107,9 @@ export const StickyCTA: React.FC = () => {
         {/* AFTER SUBMIT */}
         {success && (
           <div className="text-center text-white">
-            <p className="text-sm font-semibold">You're in! 🎉</p>
+            <p className="text-sm font-semibold">You're in for earlier access! 🎉 the app will launch soon in playstore and appstore</p>
             <p className="text-xs text-gray-400 mt-1">
-              Share this link to get earlier access.
+              Share this link to friends
             </p>
 
             <button
@@ -136,9 +136,6 @@ export const StickyCTA: React.FC = () => {
               Share Link
             </button>
 
-            <p className="text-[10px] text-gray-400 mt-1">
-              Works on WhatsApp, Instagram, Messages & more
-            </p>
           </div>
         )}
 
